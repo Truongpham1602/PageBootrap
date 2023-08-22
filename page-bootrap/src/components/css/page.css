@@ -1,0 +1,6 @@
+.navbar-nav-scroll{
+    --bs-scroll-height: '100px';
+}
+.bg{
+    background-color: #e3f2fd;
+}
