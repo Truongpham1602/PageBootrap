@@ -1,7 +1,7 @@
 import React from 'react'
-import '../css/page.css';
+import '../css/home.css';
 
-export default function page() {
+export default function home() {
     return (
         <>
             <nav className="navbar navbar-expand-lg bg">
