@@ -1,0 +1,24 @@
+.row {
+    width: 1312px;
+    /* margin: 0px auto; */
+    /* border-radius: 459px; */
+}
+
+.card{
+    background: rgb(43, 35, 35);
+    color: aliceblue;
+    border-radius: 13px;
+}
+
+.card-body{
+    padding: 4px;
+}
+.card-img-top{
+    padding: 4px;
+
+}
+.card-title{
+    text-align: center;
+    font-size: 17px;
+    padding: 10px;
+}
