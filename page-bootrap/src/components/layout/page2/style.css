@@ -11,3 +11,8 @@
     font-weight: 500;
     /* font-size: 15px; */
 }
+.card-body{
+    text-align: center;
+    font-size: 17px;
+    padding: 10px;
+}
