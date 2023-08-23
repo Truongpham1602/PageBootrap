@@ -1,10 +1,11 @@
 import React from 'react'
 import '../css/home.css';
+import { Link, Outlet } from 'react-router-dom';
 
 export default function home() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg">
+            <nav className="navbar navbar-expand-lg bg sticky-top">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">Navbar scroll</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +14,16 @@ export default function home() {
                     <div className="collapse navbar-collapse" id="navbarScroll">
                         <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
+                                <Link className="nav-link" to="page2">Page2</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="page3">Page3</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="page4">Page4</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,6 +47,7 @@ export default function home() {
                     </div>
                 </div>
             </nav>
+            <Outlet />
         </>
     )
 }

@@ -1,0 +1,13 @@
+.rounded-circle{
+    background-color: rgb(123, 121, 121);
+}
+.page4{
+    margin-top: 100px;
+}
+.t{
+    padding-top: 30px;
+    /* text-transform: capitalize; */
+    font-family: monospace;
+    font-weight: 500;
+    /* font-size: 15px; */
+}
