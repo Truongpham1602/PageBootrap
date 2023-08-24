@@ -6,9 +6,9 @@
 .img-logo{
     float: left;
 }
-.sb-nav-fixed , .layoutSidenav, .layoutSidenav_nav .sb-sidenav {
+/* .sb-nav-fixed , .layoutSidenav, .layoutSidenav_nav .sb-sidenav {
     padding-top: 10px;
-}
+} */
   
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav .sb-sidenav-menu {
     overflow-y: auto;
