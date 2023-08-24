@@ -6,13 +6,13 @@ export default function home() {
     return (
         <>
             <nav className="navbar navbar-expand-lg bg sticky-top">
-                <div className="container-fluid">
+                <div className="container">
                     <a className="navbar-brand" href="#">Navbar scroll</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarScroll">
-                        <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                        <ul className="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
@@ -24,6 +24,9 @@ export default function home() {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="page4">Page4</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="admin">Admin</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

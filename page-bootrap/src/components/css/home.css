@@ -4,3 +4,8 @@
 .bg{
     background-color: #e3f2fd;
 }
+@media screen and (max-with: 302px){
+    .navbar{
+        width: 100%;
+    }
+}

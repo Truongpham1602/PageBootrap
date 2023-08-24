@@ -11,3 +11,25 @@
     font-weight: 500;
     /* font-size: 15px; */
 }
+/* @media (max-width: 992px){
+   .row, .col{
+    min-width: 705px;
+    }
+} */
+/* @media (max-width: 768px){
+.row-cols-md-6>* {
+    width: 58%;
+}} */
+@media (max-width: 992px){
+.row-cols-md-6>* {
+    width: 38%;
+}}
+
+/* @media (min-width: 768px){
+    .container, .container-md, .container-sm {
+    max-width: 720px;
+}}
+@media (min-width: 576px){
+    .container, .container-sm {
+    max-width: 540px;  
+}} */
