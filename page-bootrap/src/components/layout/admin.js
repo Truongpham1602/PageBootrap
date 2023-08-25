@@ -7,14 +7,12 @@ export default function admin() {
     return (
         <>
             <div class="navbar navbar-expand-lg">
-                <div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <Link className="navbarbrand" to="/">
-                        <img className='img-logo' src='https://preview.keenthemes.com/metronic8/demo1/assets/media/logos/default-small.svg'></img>
-                    </Link>
-                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <Link className="navbarbrand" to="/">
+                    <img className='imglogo' src='https://preview.keenthemes.com/metronic8/demo1/assets/media/logos/default-dark.svg'></img>
+                </Link>
 
                 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
