@@ -71,12 +71,33 @@
 .navbar-expand-lg{
     padding-top: 0px;
 }
+                    
+.navbarbrand{
+    float: right;
+}
+.imglogo{
+    width: 50%;
+    float: right;
+    padding-right: 30px;
+}
+
 /* navbar logo */
 @media (min-width: 992px){
     .navbarbrand{
         display: none;
     }
     
+}
+/*  */
+@media (max-width: 992px){
+    .member-logo{
+        background-color: #343a40;
+    }
+    .navbar-toggler{
+        margin: 1%;
+        margin-left: 3%;
+    }
+
 }
 /* màn hình ipab */
 @media (max-width: 576px){
@@ -90,6 +111,9 @@
 }
 /* màn hình adroi */
 @media(max-width:320px){
+    .navbarbrand{
+        display: contents;
+    }
     .layoutSidenav_nav{
         width: 50px;
     }
