@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'bootstrap-icons';
+  src: local('bootstrap-icons'),
+  url(./fonts/bootstrap-icons.woff) format('woff');
+}

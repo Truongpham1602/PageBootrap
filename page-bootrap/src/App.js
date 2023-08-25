@@ -4,7 +4,7 @@ import Page2 from './components/layout/page2';
 import Page3 from './components/layout/page3';
 import Page4 from './components/layout/page4';
 import Admin from './components/layout/admin';
-import SideBar from './components/layout/sidebar_001/sidebar_001/left_sidebar';
+import SideBar from './components/layout/sidebar/001';
 function App() {
   return (
     <>

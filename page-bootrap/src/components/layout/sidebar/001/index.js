@@ -1,5 +1,5 @@
 import React from 'react'
-import './fonts/bootstrap-icons.woff2?8bd4575acf83c7696dc7a14a966660a3';
+import '../001/bootstrap-icons@1.4.0_font_bootstrap-icons.css';
 
 export default function left_sidebar() {
     return (
