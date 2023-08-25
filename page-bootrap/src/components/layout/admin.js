@@ -6,7 +6,7 @@ import { BsGrid } from "react-icons/bs";
 export default function admin() {
     return (
         <>
-            <div class="navbar navbar-expand-lg">
+            <div class="navbar navbar-expand-lg member-logo">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
