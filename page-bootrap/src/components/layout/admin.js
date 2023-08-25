@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/admin.css';
 import { Link, Outlet } from 'react-router-dom';
-import { BsGrid } from "react-icons/bs";
+import { BsGrid, BsPersonRolodex, BsIntersect, BsPerson, BsCardChecklist, BsCheck2Square, BsPercent } from "react-icons/bs";
 
 export default function admin() {
     return (
@@ -69,7 +69,7 @@ export default function admin() {
                                                         aria-controls="collapseLayouts"
                                                     >
                                                         <div className="sb-nav-link-icon">
-                                                            <i className="fas fa-columns"></i>
+                                                            <BsPersonRolodex />
                                                         </div>
                                                         Tài khoản
                                                         <div className="sb-sidenav-collapse-arrow">
@@ -82,7 +82,7 @@ export default function admin() {
                                                         activeClassName="active"
                                                     >
                                                         <div className="sb-nav-link-icon">
-                                                            <i className="fas fa-store-alt-slash"></i>
+                                                            < BsPerson />
                                                         </div>
                                                         Quyền
                                                     </Link>
@@ -92,25 +92,25 @@ export default function admin() {
                                                         activeClassName="active"
                                                     >
                                                         <div className="sb-nav-link-icon">
-                                                            <i className="fas fa-store-alt-slash"></i>
+                                                            <BsIntersect />
                                                         </div>
                                                         Sản phẩm
                                                     </Link>
                                                     <Link className="nav-link collapsed" to="#">
                                                         <div className="sb-nav-link-icon">
-                                                            <i className="fas fa-address-card"></i>
+                                                            <BsCardChecklist />
                                                         </div>
                                                         Loại sản phẩm
                                                     </Link>
                                                     <Link className="nav-link collapsed" to="#">
                                                         <div className="sb-nav-link-icon">
-                                                            <i className="fas fa-table"></i>
+                                                            <BsCheck2Square />
                                                         </div>
                                                         Đơn hàng
                                                     </Link>
                                                     <Link className="nav-link collapsed" to="#">
                                                         <div className="sb-nav-link-icon">
-                                                            <i className="fas fa-shopping-bag"></i>
+                                                            <BsPercent />
                                                         </div>
                                                         Khuyến mãi
                                                     </Link>
