@@ -6,20 +6,20 @@ import { BsGrid, BsPersonRolodex, BsIntersect, BsPerson, BsCardChecklist, BsChec
 export default function admin() {
     return (
         <>
-            <div class="navbar navbar-expand-lg member-logo">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <div className="navbar navbar-expand-lg member-logo">
+                <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
                 <Link className="navbarbrand" to="/">
                     <img className='imglogo' src='https://preview.keenthemes.com/metronic8/demo1/assets/media/logos/default-dark.svg'></img>
                 </Link>
 
-                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div className="offcanvas-header">
+                        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
+                    <div className="offcanvas-body">
                         {/*  */}
                         <div className="sb-nav-fixed">
                             <div className="layoutSidenav">
@@ -45,7 +45,7 @@ export default function admin() {
                                                     </button>
                                                     <div id="collapseOne" className="collapse">
                                                         <div className="accordionbodyy">
-                                                            <ul class="nav  ms-1">
+                                                            <ul className="nav  ms-1">
                                                                 <li className='nav-item itme'><a className="nav-link" href="#">Action</a></li>
                                                                 <li className='nav-item itme'><a className="nav-link" href="#">Another action</a></li>
                                                                 <li className='nav-item itme'><a className="nav-link" href="#">Something else here</a></li>
@@ -79,7 +79,7 @@ export default function admin() {
                                                     <Link
                                                         className="nav-link"
                                                         to="#"
-                                                        activeClassName="active"
+                                                        activeclassname="active"
                                                     >
                                                         <div className="sb-nav-link-icon">
                                                             < BsPerson />
@@ -89,7 +89,7 @@ export default function admin() {
                                                     <Link
                                                         className="nav-link"
                                                         to="#"
-                                                        activeClassName="active"
+                                                        activeclassname="active"
                                                     >
                                                         <div className="sb-nav-link-icon">
                                                             <BsIntersect />
