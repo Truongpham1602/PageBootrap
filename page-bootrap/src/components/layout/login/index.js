@@ -1,5 +1,4 @@
 import { React } from 'react';
-import $ from 'jquery';
 import './css/main.css';
 import './css/util.css';
 import './fonts/font-awesome-4.7.0/css/font-awesome.min.css'
