@@ -101,9 +101,9 @@
 }
 /* màn hình ipab */
 @media (max-width: 576px){
-    .layoutSidenav ,.layoutSidenav_nav{
+    /* .layoutSidenav ,.layoutSidenav_nav{
         width: 100px;
-    }
+    } */
     .img-logo{
         margin-left: 14px;
         width: 40px;
@@ -114,9 +114,9 @@
     .navbarbrand{
         display: contents;
     }
-    .layoutSidenav_nav{
+    /* .layoutSidenav_nav{
         width: 50px;
-    }
+    } */
     .img-logo{
         margin-left: 0px;
         width: 25px;
@@ -265,4 +265,17 @@
 .fw-bold {
     font-size: 12px;
     font-weight: 600!important;
+}
+
+
+.layoutSidenav{
+
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+}
+
+
+.offcanvas-header {
+  padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
 }
