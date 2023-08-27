@@ -1,8 +1,11 @@
-import React from 'react'
-import '../login/main.css';
-import '../login/util.css';
+import { React } from 'react';
+import $ from 'jquery';
+import './css/main.css';
+import './css/util.css';
+import './fonts/font-awesome-4.7.0/css/font-awesome.min.css'
 
 export default function login() {
+
     return (
         <>
             <div className="limiter">
@@ -41,8 +44,8 @@ export default function login() {
 
                             <div className="text-center p-t-12">
                                 <span className="txt1">
-                                    Forgot
-                                </span>
+                                &#32;Forgot&#32;
+                                </span> 
                                 <a className="txt2" href="#">
                                     Username / Password?
                                 </a>

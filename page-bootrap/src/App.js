@@ -6,7 +6,7 @@ import Page4 from './components/layout/page4';
 import Admin from './components/layout/admin';
 import SideBar from './components/layout/sidebar/001';
 import Login from './components/layout/login';
-function App() {
+function App () {
   return (
     <>
       <div className="App">
