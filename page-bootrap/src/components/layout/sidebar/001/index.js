@@ -1,9 +1,17 @@
 import React from 'react'
-import '../001/bootstrap-icons@1.4.0_font_bootstrap-icons.css';
+import $ from "jquery";
 
-export default function left_sidebar() {
-    return (
-        <>
+
+class LeftSidebar extends React.Component{
+
+    componentDidMount() {
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+    }
+
+    render () {
+        return 
             <div className="container-fluid">
                 <div className="row flex-nowrap">
                     <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -102,6 +110,7 @@ export default function left_sidebar() {
                     </div>
                 </div>
             </div>
-        </>
-    )
+        
+    }
 }
+export default LeftSidebar;

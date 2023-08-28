@@ -1,4 +1,8 @@
 import { Route, Router, Routes } from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+
 import Home from './components/layout/home';
 import Page2 from './components/layout/page2';
 import Page3 from './components/layout/page3';
@@ -6,6 +10,7 @@ import Page4 from './components/layout/page4';
 import Admin from './components/layout/admin';
 import SideBar from './components/layout/sidebar/001';
 import Login from './components/layout/login';
+
 function App () {
   return (
     <>
