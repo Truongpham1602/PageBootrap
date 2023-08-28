@@ -1,7 +1,11 @@
+import { React } from 'react';
 import { Route, Router, Routes } from 'react-router-dom';
 
+
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'bootstrap/dist/js/bootstrap.bundle';
+import 'jquery/dist/jquery'
+import 'tilt.js'
 
 import Home from './components/layout/home';
 import Page2 from './components/layout/page2';
@@ -11,9 +15,9 @@ import Admin from './components/layout/admin';
 import SideBar from './components/layout/sidebar/001';
 import Login from './components/layout/login';
 
-function App () {
-  return (
-    <>
+class App extends React.Component{
+  render () {
+    return 
       <div className="App">
         <Routes>
           <Route path='/' element={<Home />} >
@@ -26,8 +30,7 @@ function App () {
           <Route path='login' element={<Login />}></Route>
         </Routes>
       </div>
-    </>
-  );
+  }  
 }
 
 export default App;
