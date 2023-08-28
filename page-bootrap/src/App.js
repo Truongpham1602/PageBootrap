@@ -5,7 +5,6 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import 'jquery/dist/jquery'
-import 'tilt.js'
 
 import Home from './components/layout/home';
 import Page2 from './components/layout/page2';

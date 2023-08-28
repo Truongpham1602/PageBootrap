@@ -4,8 +4,17 @@ import './css/util.css';
 import './fonts/font-awesome-4.7.0/css/font-awesome.min.css'
 import login from '../login'
 import { Link } from 'react-router-dom';
+import { Tilt } from 'react-tilt';
+import $ from 'jquery';
+import 'tilt.js';
 
 class register extends React.Component {
+
+    componentDidMount(){
+        $('.js-tilt').tilt({
+			scale: 1.1
+		})
+    }
 
     render(){
         return (

@@ -3,8 +3,16 @@ import './css/main.css';
 import './css/util.css';
 import './fonts/font-awesome-4.7.0/css/font-awesome.min.css'
 import { Link } from 'react-router-dom';
+import { Tilt } from 'react-tilt';
+import $ from 'jquery';
+import 'tilt.js';
 
 class login extends React.Component {
+    componentDidMount(){
+        $('.js-tilt').tilt({
+			scale: 1.1
+		})
+    }
 
     render(){
         return (
@@ -12,9 +20,9 @@ class login extends React.Component {
                 <div className="limiter">
                     <div className="container-login100">
                         <div className="wrap-login100">
-                            <div className="login100-pic js-tilt" data-tilt>
+                            <Tilt className="login100-pic js-tilt" data-tilt>
                                 <img src={require('./images/img-01.png')} alt="IMG" />
-                            </div>
+                            </Tilt>
 
                             <form className="login100-form validate-form">
                                 <span className="login100-form-title">
