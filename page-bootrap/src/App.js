@@ -14,6 +14,7 @@ import Page4 from './components/layout/page4';
 import Admin from './components/layout/admin';
 import SideBar from './components/layout/sidebar/001';
 import Login from './components/layout/login';
+import Register from './components/layout/register';
 
 class App extends React.Component{
   render () {
@@ -28,6 +29,7 @@ class App extends React.Component{
           <Route path='admin' element={<Admin />}></Route>
           <Route path='SideBar' element={<SideBar />}></Route>
           <Route path='login' element={<Login />}></Route>
+          <Route path='register' element={<Register />}></Route>
         </Routes>
       </div>
     );
