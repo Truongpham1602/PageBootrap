@@ -1,5 +1,5 @@
-import { React } from 'react';
-import { Route, Router, Routes } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -17,7 +17,7 @@ import Login from './components/layout/login';
 
 class App extends React.Component{
   render () {
-    return 
+    return (
       <div className="App">
         <Routes>
           <Route path='/' element={<Home />} >
@@ -30,6 +30,7 @@ class App extends React.Component{
           <Route path='login' element={<Login />}></Route>
         </Routes>
       </div>
+    );
   }  
 }
 
