@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/admin.css';
+import './css/admin.css';
 import { Link, Outlet } from 'react-router-dom';
 import { BsGrid, BsPersonRolodex, BsIntersect, BsPerson, BsCardChecklist, BsCheck2Square, BsPercent } from "react-icons/bs";
 
@@ -17,9 +17,10 @@ export default function admin() {
                 <div className="offcanvas offcanvas-end text-bg-dark"
                     tabIndex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div className="offcanvas-header">
-                        {/* <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5> */}
+                    {/* <div className="offcanvas-header">
+                        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
                         <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div> */}
                         {/*  */}
                         <div className="sb-nav-fixed">
                             <div className="layoutSidenav">
@@ -29,11 +30,11 @@ export default function admin() {
                                             <div className="nav">
 
                                                 <Link className="navbar-brand ps-3 img-admin" to="/">
-                                                    <span className='textLogo d-none d-sm-inline'>Metronic</span>
+                                                    <span className='textLogo'>Metronic</span>
                                                     <img className='img-logo' src='https://preview.keenthemes.com/metronic8/demo1/assets/media/logos/default-small.svg'></img>
                                                 </Link>
 
-                                                <hr className='text-white d-none d-sm-block' />
+                                                <hr className='text-white' />
 
                                                 <div className='Dashboards'>
                                                     <button className="accordion-button" type="" data-bs-toggle="collapse"
@@ -41,7 +42,7 @@ export default function admin() {
                                                         <div className="sb-nav-link-icon">
                                                             <BsGrid />
                                                         </div>
-                                                        <span className='d-none d-sm-block'>Dashboards</span>
+                                                        <span className=''>Dashboards</span>
                                                     </button>
                                                     <div id="collapseOne" className="collapse">
                                                         <div className="accordionbodyy">
@@ -53,7 +54,7 @@ export default function admin() {
                                                         </div>
                                                     </div>
 
-                                                    <div className="menu-item pt-1 d-none d-sm-block">
+                                                    <div className="menu-item pt-1">
                                                         {/* begin:Menu content */}
                                                         <div className="menu-content">
                                                             <span className="menu-heading fw-bold text-uppercase">Pages</span>
@@ -125,7 +126,6 @@ export default function admin() {
                             </div>
                         </div>
                         {/* end */}
-                    </div>
                 </div>
             </div>
 
