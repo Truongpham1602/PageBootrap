@@ -11,7 +11,7 @@ class LeftSidebar extends React.Component{
     }
 
     render () {
-        return 
+        return (
             <div className="container-fluid">
                 <div className="row flex-nowrap">
                     <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -110,7 +110,7 @@ class LeftSidebar extends React.Component{
                     </div>
                 </div>
             </div>
-        
+        );
     }
 }
 export default LeftSidebar;
