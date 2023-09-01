@@ -1,2 +1,2 @@
 
-export const DOMAIN = "http://172.20.10.3:8086/"
+export const DOMAIN = "http://mydomain.com.vn:8086/"

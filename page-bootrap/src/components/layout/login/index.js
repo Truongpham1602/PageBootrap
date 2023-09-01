@@ -39,9 +39,38 @@ class login extends React.Component {
         };
 
         fetch(`${DOMAIN}poseidon/public/api/v1/auth/authenticate`, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        .then(response =>{
+            if(response.ok || response.status == 400){
+                alert(response.ok);
+                return response.json()
+            }
+            throw Error(response.status)
+        })
+        .then(result => {
+            if(result.code == 200){
+                console.log("thanh cong");
+            }
+        })
+        .catch(error => alert('error', error));
+
+
+        // var settings = {
+        //     "url": (`${DOMAIN}/poseidon/public/api/v1/auth/authenticate`),
+        //     "method": "POST",
+        //     crossDomain : true,
+        //     "timeout": 0,
+        //     "headers": {
+        //       "Content-Type": "application/json"
+        //     },
+        //     "data": JSON.stringify({
+        //       "userName": this.state.userName,
+        //       "password": this.state.password
+        //     }),
+        //   };
+          
+        //   $.ajax(settings).done(function (response) {
+        //     console.log(response);
+        //   });
     }
     componentDidMount(){
         $('.js-tilt').tilt({
@@ -54,7 +83,6 @@ class login extends React.Component {
         return (
             <>
                 <div className="limiter">
-                <ToastContainer />
                     <div className="container-login100">
                         <div className="wrap-login100">
                             <Tilt className="login100-pic js-tilt" data-tilt>
