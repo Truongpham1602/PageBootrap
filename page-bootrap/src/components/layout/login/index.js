@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Tilt } from 'react-tilt';
 import $ from 'jquery';
 import 'tilt.js';
+import axios from 'axios';
 import { DOMAIN } from '../../../util/url.constant';
 
 
@@ -23,35 +24,60 @@ class login extends React.Component {
     }
 
     login = () => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var raw = JSON.stringify({
-            "userName": this.state.userName,
-            "password": this.state.password
+        let data = JSON.stringify({
+          "userName": this.state.userName,
+          "password": this.state.password
         });
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
+        
+        let config = {
+          method: 'post',
+          maxBodyLength: Infinity,
+          url: DOMAIN+'poseidon/public/api/v1/auth/authenticate',
+          headers: { 
+            'Content-Type': 'application/json'
+          },
+          data : data
         };
+        
+        axios.request(config)
+        .then((response) => {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+        
 
-        fetch(`${DOMAIN}poseidon/public/api/v1/auth/authenticate`, requestOptions)
-        .then(response =>{
-            if(response.ok || response.status == 400){
-                alert(response.ok);
-                return response.json()
-            }
-            throw Error(response.status)
-        })
-        .then(result => {
-            if(result.code == 200){
-                console.log("thanh cong");
-            }
-        })
-        .catch(error => alert('error', error));
+
+        // var myHeaders = new Headers();
+        // myHeaders.append("Content-Type", "application/json");
+
+        // var raw = JSON.stringify({
+        //     "userName": this.state.userName,
+        //     "password": this.state.password
+        // });
+
+        // var requestOptions = {
+        //     method: 'POST',
+        //     headers: myHeaders,
+        //     body: raw,
+        //     redirect: 'follow'
+        // };
+
+        // fetch(`${DOMAIN}poseidon/public/api/v1/auth/authenticate`, requestOptions)
+        // .then(response =>{
+        //     if(response.ok || response.status == 400){
+        //         alert(response.ok);
+        //         return response.json()
+        //     }
+        //     throw Error(response.status)
+        // })
+        // .then(result => {
+        //     if(result.code == 200){
+        //         console.log("thanh cong");
+        //     }
+        // })
+        // .catch(error => alert('error', error));
 
 
         // var settings = {
