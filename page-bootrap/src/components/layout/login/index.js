@@ -8,6 +8,7 @@ import $ from 'jquery';
 import 'tilt.js';
 import axios from 'axios';
 import { DOMAIN } from '../../../util/url.constant';
+import Swal from 'sweetalert2';
 
 
 class login extends React.Component {
@@ -15,15 +16,36 @@ class login extends React.Component {
         super(props);
         this.state = {
             "userName": "",
-            "password": ""
+            "password": "",
+            "checkuserName" : "",
+            "checkpassword" : ""
         }
     }
 
     setParams = (event) => {
+        if(event.target.name === "userName"){
+            this.setState({["checkuserName"]: ""})
+        }
+        else if(event.target.name === "password"){
+            this.setState({["checkpassword"]: ""})
+        }
         this.setState({[event.target.name]: event.target.value})
     }
+    
 
     login = () => {
+        console.log(this.state.userName);
+        if(this.state.userName.trim() === ""){
+            this.setState({["checkuserName"]: "null"})
+        }if(this.state.password.trim() === ""){
+            this.setState({["checkpassword"]: "null"})
+        }
+        if(this.state.userName.trim() === "" 
+        || this.state.password.trim() === ""){
+            return
+        }
+
+
         let data = JSON.stringify({
           "userName": this.state.userName,
           "password": this.state.password
@@ -41,9 +63,23 @@ class login extends React.Component {
         
         axios.request(config)
         .then((response) => {
+            alert("thành công");
           console.log(JSON.stringify(response.data));
         })
         .catch((error) => {
+            if(error.response){
+                Swal.fire(
+                    error.response.data.code,
+                    error.response.data.message,
+                    'warning'
+                )
+            }else{
+                Swal.fire(
+                    'Error',
+                    'Lỗi server',
+                    'error'
+                )
+            }
           console.log(error);
         });
         
@@ -120,22 +156,33 @@ class login extends React.Component {
                                     Member Login
                                 </span>
 
-                                <div className="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                <div className="wrap-input100 validate-input">
 
-                                    <input className="input100" type="text" name="userName" placeholder="User Name" onChange={this.setParams}/>
+                                    <input className="input100"
+                                        type="text" 
+                                        name="userName" 
+                                        placeholder="User Name" 
+                                        onChange={this.setParams}
+                                    />
                                     <span className="focus-input100"></span>
                                     <span className="symbol-input100">
                                         <i className="fa fa-user" aria-hidden="true"></i>
                                     </span>
                                 </div>
+                                {this.state.checkuserName === "null" && 
+                                <p style={{color : "red", marginBottom:"2%"}}>Trường này chưa được điền !</p>
+                                } 
 
-                                <div className="wrap-input100 validate-input" data-validate = "Password is required">
+                                <div className="wrap-input100 validate-input">
                                     <input className="input100" type="password" name="password" placeholder="Password" onChange={this.setParams}/>
                                     <span className="focus-input100"></span>
                                     <span className="symbol-input100">
                                         <i className="fa fa-lock" aria-hidden="true"></i>
                                     </span>
                                 </div>
+                                {this.state.checkpassword === "null" && 
+                                <p style={{color : "red", marginBottom:"2%"}}>Trường này chưa được điền !</p>
+                                } 
                                 
                                 <div className="container-login100-form-btn">
 
