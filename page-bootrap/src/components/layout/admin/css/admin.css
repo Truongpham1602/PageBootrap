@@ -71,6 +71,13 @@
 .navbar-expand-lg{
     padding-top: 0px;
 }
+.navbar{
+  --bs-navbar-padding-x: none;
+}
+
+.row > * {
+  padding-left: calc(var(--bs-gutter-x) * none);
+}
                     
 .navbarbrand{
     float: right;
