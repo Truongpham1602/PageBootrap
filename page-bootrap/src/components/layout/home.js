@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/home.css";
 import { Link, Outlet } from "react-router-dom";
 import MODAL from "../layout/page4/modal.js";
+import UpFiles from "./upLoad.js";
+import authService from "../../services/auth.services";
 
-export default function home() {
+export default function Home() {
+  const [currentUser, setCurrentUser] = useState(undefined);
+  useEffect(() => {
+    const user = authService.getCurrentUser();
+
+    if (user) {
+      setCurrentUser(user);
+    }
+  }, [currentUser]);
+
+  const logout = () => {
+    authService.logout();
+    setCurrentUser(undefined);
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg sticky-top">
@@ -54,7 +70,7 @@ export default function home() {
                   SideBar
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="login">
                   Login
                 </Link>
@@ -63,7 +79,28 @@ export default function home() {
                 <Link className="nav-link" to="register">
                   Register
                 </Link>
-              </li>
+              </li> */}
+              {currentUser ? (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/" onClick={logout}>
+                    Logout
+                  </Link>
+                </li>
+              ) : (
+                <div className="navbar-nav ms-auto">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="login">
+                      Login
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className="nav-link" to="register">
+                      Register
+                    </Link>
+                  </li>
+                </div>
+              )}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -116,6 +153,7 @@ export default function home() {
         </div>
       </nav>
       <MODAL />
+      {currentUser && <UpFiles />}
       <Outlet />
     </>
   );

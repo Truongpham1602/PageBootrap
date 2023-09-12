@@ -9,6 +9,7 @@ import "tilt.js";
 import axios from "axios";
 import { DOMAIN } from "../../../util/url.constant";
 import Swal from "sweetalert2";
+import authService from "../../../services/auth.services";
 
 class login extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class login extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  login = () => {
+  login = async () => {
     if (this.state.userName.trim() === "") {
       this.setState({ ["checkuserName"]: "null" });
     }
@@ -44,35 +45,52 @@ class login extends React.Component {
       return;
     }
 
-    let data = JSON.stringify({
-      userName: this.state.userName,
-      password: this.state.password,
-    });
+    try {
+      await authService
+        .login(this.state.userName, this.state.password)
+        .then(() => {
+          this.setState({ ["user"]: "abc" });
+        });
+    } catch (error) {
+      if (error.response) {
+        Swal.fire(error.response.data.message, "", "warning");
+      } else {
+        Swal.fire("Error", "Lỗi server", "error");
+      }
+    }
 
-    let config = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: DOMAIN + "poseidon/public/api/v1/auth/authenticate",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+    // let data = JSON.stringify({
+    //   userName: this.state.userName,
+    //   password: this.state.password,
+    // });
 
-    axios
-      .request(config)
-      .then((response) => {
-        console.log(response);
-        localStorage.getItem("access_token", response.data.access_token);
-        this.setState({ ["user"]: "abc" });
-      })
-      .catch((error) => {
-        if (error.response) {
-          Swal.fire(error.response.data.message, "", "warning");
-        } else {
-          Swal.fire("Error", "Lỗi server", "error");
-        }
-      });
+    // let config = {
+    //   method: "post",
+    //   maxBodyLength: Infinity,
+    //   url: DOMAIN + "poseidon/public/api/v1/auth/authenticate",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: data,
+    // };
+
+    // axios
+    //   .request(config)
+    //   .then((response) => {
+    //     if (response.data.access_token) {
+    //       localStorage.getItem("user", JSON.stringify(response.data));
+    //       this.setState({ ["user"]: "abc" });
+    //     }
+    //     console.log(response.data);
+    //     return response.data;
+    //   })
+    //   .catch((error) => {
+    //     if (error.response) {
+    //       Swal.fire(error.response.data.message, "", "warning");
+    //     } else {
+    //       Swal.fire("Error", "Lỗi server", "error");
+    //     }
+    //   });
 
     // var myHeaders = new Headers();
     // myHeaders.append("Content-Type", "application/json");
