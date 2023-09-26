@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/home.css';
 import { Link, Outlet } from 'react-router-dom';
+import Footer from './footer';
 
 export default function home() {
     return (
@@ -60,6 +61,7 @@ export default function home() {
                 </div>
             </nav>
             <Outlet />
+            <Footer/>
         </>
     )
 }
