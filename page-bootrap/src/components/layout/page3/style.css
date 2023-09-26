@@ -1,24 +1,88 @@
-.row {
-    width: 1312px;
-    /* margin: 0px auto; */
-    /* border-radius: 459px; */
+.chooser{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto 80px;
+    max-width: 1220px;
+    min-width: 1024px;
+    width: 100%;
 }
 
-.card{
-    background: rgb(43, 35, 35);
-    color: aliceblue;
-    border-radius: 13px;
+.chooser li {
+    float: left;
+    width: 15%;
+    margin: 0 10px;
+    border-radius: 12px;
+    background: #323232;
+    height: 220px;
+    position: relative;
 }
 
-.card-body{
-    padding: 4px;
+.chooser li a {
+    display: block;
+    overflow: hidden;
 }
-.card-img-top{
-    padding: 4px;
 
+.chooser li .cateiphone {
+    width: 102px;
 }
-.card-title{
+
+.chooser li .catemac {
+    width: 120px;
+    margin-top: 56px;
+}
+
+.chooser li .cateipad {
+    width: 116px;
+    margin-top: 51px;
+}
+
+.chooser li .catewatch {
+    width: 130px;
+    margin-top: 45px;
+}
+
+.chooser li .cateisound {
+    width: 169px;
+    margin-top: 50px;
+}
+
+.chooser li .catephukien {
+    width: 71px;
+    margin-top: 50px;
+}
+
+.chooser li .img-catesp {
+    display: block;
+    overflow: hidden;
+    margin: 45px auto 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+.chooser li .img-catesp img {
+    display: block;
+    width: 100%;
+}
+
+img {
+    border: 0;
+}
+
+.chooser li span {
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
     text-align: center;
-    font-size: 17px;
-    padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
 }
