@@ -1,0 +1,11 @@
+.navbar-nav-scroll{
+    --bs-scroll-height: '100px';
+}
+.bg{
+    background-color: #e3f2fd;
+}
+@media screen and (max-with: 302px){
+    .navbar{
+        width: 100%;
+    }
+}

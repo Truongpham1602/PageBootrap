@@ -31,7 +31,7 @@ const login = (userName, password) => {
           JSON.stringify(response.data.access_token)
         );
       }
-      console.log(response.data);
+      // console.log(response.data);
       return response.data;
     });
 };

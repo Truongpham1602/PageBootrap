@@ -3,6 +3,7 @@ import axios from "axios";
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
 import { FileUpload } from "primereact/fileupload";
+import UpLoad from "../../share/upLoad";
 
 export default function WithoutModalDemo() {
   const [visible, setVisible] = useState(false);
@@ -31,27 +32,18 @@ export default function WithoutModalDemo() {
   return (
     <div className="">
       <Button
-        label="Show"
+        label="Image"
         icon="pi pi-external-link"
         onClick={() => setVisible(true)}
       />
       <Dialog
-        header="Image"
+        header="UpLoad Files"
         visible={visible}
         modal={false}
         style={{ width: "50vw" }}
         onHide={() => setVisible(false)}
       >
-        <FileUpload
-          name="demo[]"
-          url={"/poseidon/api/v1/post/to-post"}
-          multiple
-          accept="image/*"
-          maxFileSize={1000000}
-          emptyTemplate={
-            <p className="m-0">Drag and drop files to here to upload.</p>
-          }
-        />
+        <UpLoad />
       </Dialog>
     </div>
   );
