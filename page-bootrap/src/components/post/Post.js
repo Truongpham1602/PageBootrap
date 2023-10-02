@@ -3,6 +3,10 @@ import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./post.css";
 import { DOMAIN } from "../../util/url.constant";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 export default function Post(props) {
   const { postIMG, post } = props;
@@ -28,14 +32,16 @@ export default function Post(props) {
                         //     ? PF + user.profilePicture
                         //     : PF + "person/noAvatar.png"
                         // }
+                        src="assets/person/noAvatar.png"
                         alt=""
                       />
                     </Link>
-                    <span className="postUsername"></span>
-                    <span className="postDate"></span>
-                  </div>
-                  <div className="postTopRight">
-                    {/* <MoreVert /> dấu ba chấm bên tay phải */}
+                    <span className="postUsername">phạm văn trường •</span>
+                    <span className="postDate">12h</span>
+                    <div className="postTopRight">
+                      <MoreHorizIcon />
+                      {/* dấu ba chấm bên tay phải */}
+                    </div>
                   </div>
                 </div>
                 <div className="postCenter">
@@ -53,25 +59,34 @@ export default function Post(props) {
                 </div>
                 <div className="postBottom">
                   <div className="postBottomLeft">
-                    <img
+                    <div className="likeIcon">
+                      <FavoriteBorderRoundedIcon />
+                    </div>
+                    <div className="likeIcon">
+                      <ChatBubbleOutlineIcon />
+                    </div>
+                    {/* <img
                       className="likeIcon"
-                      //   src={`${PF}like.png`}
-                      //   onClick={likeHandler}
+                        src={`${PF}like.png`}
+                        onClick={likeHandler}
                       alt=""
-                    />
-                    <img
+                    /> */}
+                    {/* <img
                       className="likeIcon"
-                      //   src={`${PF}heart.png`}
-                      //   onClick={likeHandler}
+                        src={`${PF}heart.png`}
+                        onClick={likeHandler}
                       alt=""
-                    />
+                    /> */}
                     <span className="postLikeCounter"> people like it</span>
                   </div>
                   <div className="postBottomRight">
-                    <span className="postCommentText"> comments</span>
+                    <span className="postCommentText">
+                      <BookmarkBorderIcon />
+                    </span>
                   </div>
                 </div>
               </div>
+              <hr />
             </div>
           );
         })}
