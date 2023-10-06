@@ -9,15 +9,17 @@ import {
   EmojiEmotions,
   Cancel,
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 export default function UpLoad(props) {
+  const navigate = useNavigate();
   const [files, setFiles] = useState([]);
   const [msg, setMsg] = useState(null);
   const FormData = require("form-data");
   axios.defaults.headers.common = {
     Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))}`,
   };
-  const { postIMG } = props;
+  const { postIMG, setVisible } = props;
   const [contents, setContents] = useState("");
 
   const imgs = (e) => {
@@ -58,6 +60,7 @@ export default function UpLoad(props) {
         postIMG();
         setFiles([]);
         setContents("");
+        setVisible(false);
         return response.data;
       })
       .catch((error) => {

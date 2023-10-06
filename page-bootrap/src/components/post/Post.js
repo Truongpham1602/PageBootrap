@@ -38,10 +38,10 @@ export default function Post(props) {
                     </Link>
                     <span className="postUsername">phạm văn trường •</span>
                     <span className="postDate">12h</span>
-                    <div className="postTopRight">
-                      <MoreHorizIcon />
-                      {/* dấu ba chấm bên tay phải */}
-                    </div>
+                    <MoreHorizIcon />
+                    {/* <div className="postTopRight">
+                      dấu ba chấm bên tay phải
+                    </div> */}
                   </div>
                 </div>
                 <div className="postCenter">

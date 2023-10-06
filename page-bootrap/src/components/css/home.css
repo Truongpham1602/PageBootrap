@@ -1,4 +1,10 @@
-.homeContainer{
+.homepage{
     display: flex;
-    width: 100%;
+    flex-direction: row;
+}
+.homepage_nav{
+    flex: 0.2;
+}
+.homepage_feed{
+    flex: 0.8;
 }
